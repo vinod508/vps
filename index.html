@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/VPS-Logo.png" rel="icon">
+    <link href="assets/img/VPS-Logo.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/css/Custom.css" rel="stylesheet" />
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("[id*=btnSend]").click(function () {
+                var toEmail = $.trim($("[id*=txtTo]").val());
+                var subject = $.trim($("[id*=txtSubject]").val());
+                var body = $.trim($("[id*=txtBody]").val());
+                //if (toEmail == "" || subject == "" || body == "" ) {
+                //    alert("please Enter all details.");
+
+                $.ajax({
+                    type: "POST",
+                    /*url: 'http://vpstechnology.in/VPSService.asmx/SendEmail',*/
+                    url: "VPSService.asmx/Send_mail",
+                    data: "{ toEmail: '" + toEmail + "', subject: '" + subject + "', body: '" + body + "' }",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (r) {
+                        alert(r.d);
+                    },
+                    error: function (r) {
+                        alert(r.responseText);
+                    },
+                    failure: function (r) {
+                        alert(r.responseText);
+                    }
+                });
+                return false;
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+
+
+
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top ">
+        <div class="container d-flex align-items-center">
+
+            <h1 class="logo me-auto"><a href="index.html">VPS</a></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#VPS">Home</a></li>
+                    <li><a class="nav-link scrollto" href="#about">About</a></li>
+
+                    <!--<li><a class="nav-link scrollto" href="#portfolio">Consulting</a></li>-->
+                    <!--<li><a class="nav-link scrollto" href="#team">Team</a></li>-->
+                    <li><a class="nav-link scrollto" href="#services">Services</a></li>
+                    <li><a class="nav-link scrollto" href="#consulting">Consulting</a></li>
+                    <li><a class="nav-link scrollto" href="#products">Products</a></li>
+                    <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                    <li><a class="getstarted scrollto" href="#about">Get Started</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+
+        </div>
+    </header><!-- End Header -->
+    <!-- ======= VPS Section ======= -->
+    <section id="VPS" class="d-flex align-items-center">
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+                    <h1>Better Solutions For Your Business</h1>
+                    <h2>Solutions That Meet Your Business' Needs</h2>
+                    <div class="d-flex justify-content-center justify-content-lg-start">
+                        <a href="#about" class="btn-get-started scrollto">Know More</a>
+                        <!--<a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>-->
+                    </div>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2 VPS-img" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="assets/img/VPS-img.png" class="img-fluid animated" alt="">
+                </div>
+            </div>
+        </div>
+
+    </section><!-- End VPS -->
+
+    <main id="main">
+
+        <!-- ======= Clients Section ======= -->
+        <section id="clients" class="clients section-bg">
+            <div class="container">
+
+                <!--<div class="row" data-aos="zoom-in">
+
+                  <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                    <img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
+                  </div>
+
+                  <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                    <img src="assets/img/clients/client-2.png" class="img-fluid" alt="">
+                  </div>
+
+                  <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                    <img src="assets/img/clients/client-3.png" class="img-fluid" alt="">
+                  </div>
+
+                  <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                    <img src="assets/img/clients/client-4.png" class="img-fluid" alt="">
+                  </div>
+
+                  <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                    <img src="assets/img/clients/client-5.png" class="img-fluid" alt="">
+                  </div>
+
+                  <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+                    <img src="assets/img/clients/client-6.png" class="img-fluid" alt="">
+                  </div>
+
+                </div>-->
+
+            </div>
+        </section><!-- End Cliens Section -->
+        <!-- ======= About Us Section ======= -->
+        <section id="about" class="about">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2 class="text-center">WHY CHOOSE VPSTECHNOLOGY?</h2>
+                </div>
+
+                <div class="row content">
+                    <div class="">
+                        <p class="text-justify">In today’s increasingly technology driven marketplace, it is critical to keep up with the latest innovations and solutions, in order to make the most of your investments and keep your business moving forward. So whether you are new to working with an IT Partner, or have worked with one for years, with VPS Technology you will find cost-efficient support, guidance and the inspiration you need to provide your business with a competitive advantage.</p>
+                        <p class="text-center">We are the bridge that brings together people, technology and business.</p>
+                        <div class="section-title">
+                            <h3 class="text-center ">WHAT WE DO</h3>
+                        </div>
+                        <!--<ul>
+                            <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
+                            <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit</li>
+                            <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat</li>
+                        </ul>-->
+                    </div>
+
+                </div>
+                <div class="row content">
+                    <div class="col-md-6">
+                        <h2>Consulting</h2>
+                        <div class="seprator"></div>
+                        <p>
+                            VPS Technology strives to build long term relationships and to provide quality products and services that will exceed the expectations of all our customers.
+                        </p>
+                        <p>
+                            <a class="btn btn-default" href="#services">Know more &raquo;</a>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <h2>Security</h2>
+                        <div class="seprator"></div>
+                        <p>
+                            Trust in VPS Technology to provide the optimum level of protection for your business.
+                        </p>
+                        <p>
+                            <a class="btn btn-default" href="#security">Know more &raquo;</a>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <h2>Networking</h2>
+                        <div class="seprator"></div>
+                        <p>
+                            VPS Technology’s experienced professionals can deliver an effective IT infrastructure based on your environment and business needs.
+                        </p>
+                        <p>
+                            <a class="btn btn-default" href="#Networking">Learn more &raquo;</a>
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <h2>Virtualisation & Cloud Services</h2>
+                        <div class="seprator"></div>
+
+                        <p>
+                            VPS Technology will help reduce your dependency on physical devices though the different types of virtualization.<br />
+                            also offer mobile and flexible cloud options.
+
+                        </p>
+                        <ul>
+                            <li>Private Cloud</li>
+                            <li>Infrastructure</li>
+                            <li>Application and Storage hosting</li>
+                            <li>On Premise High Availability</li>
+                            <li>Cloud-based Solutions</li>
+                            <li>Hybrid Cloud</li>
+                        </ul>
+                        <p>
+                            <a class="btn btn-default" href="#cloud">Learn more &raquo;</a>
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End About Us Section -->
+        <!-- ======= Why Us Section ======= -->
+        <section id="why-us" class="why-us section-bg">
+            <div class="container-fluid" data-aos="fade-up">
+
+                <div class="row">
+
+                    <div class="col-lg-7 d-flex flex-column justify-content-center align-items-stretch  order-2 order-lg-1">
+
+                        <div class="content">
+                            <h3>SERVER MANAGEMENT <strong></strong></h3>
+                            <!--<p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+                            </p>-->
+                        </div>
+
+                        <div class="accordion-list">
+                            <ul>
+                                <li>
+                                    <div class="heading-title">
+                                        <h4><a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1"> Server Maintenance <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a></h4>
+                                    </div>
+                                    <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
+
+                                        <p>
+                                            <span>1</span>
+                                            Benefit of technical support and better web security
+                                        </p>
+                                        <p><span>2</span>Verification of data backup and restoration</p>
+                                        <p><span>3</span>Auditing systematically of database lag, page load time, etc. to ensure a better performance</p>
+                                        <p><span>4</span>Configuration the server for an optimal performance and secure it to protect from vulnerability exploits and attacks</p>
+                                        <p><span>5</span>Review and update the server security settings to protect them from such vulnerabilities and hackers.</p>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <div class="heading-title">
+                                        <h4><a data-bs-toggle="collapse" data-bs-target="#accordion-list-2" class="collapsed"><span></span> Security Services <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a></h4>
+                                    </div>
+                                    <div id="accordion-list-2" class="collapse" data-bs-parent=".accordion-list">
+                                        <p>
+                                            A secure infrastructure is a key to successful business. Our experts will custom build, monitor and maintain a solution that best protects your network round the clock.
+                                        </p>
+                                    </div>
+                                </li>
+
+                                <!--<li>
+                                    <a data-bs-toggle="collapse" data-bs-target="#accordion-list-3" class="collapsed"><span>03</span> Firewall Services<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                                    <div id="accordion-list-3" class="collapse" data-bs-parent=".accordion-list">
+                                        <p>
+                                            We can assist you in complete design , deployment , monitoring and management of all your needs to host your applications behind a secure firewall.
+                                        </p>
+                                        <p>
+                                            Configuration of Client-based VPN (user authentication)
+                                        </p>
+                                        <p>
+                                            Configuration of Site-to-Site tunnels
+                                        </p>
+
+                                    </div>
+                                </li>-->
+
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-5 align-items-stretch order-1 order-lg-2 img" style='background-image: url("assets/img/server-png-cloud.png");' data-aos="zoom-in" data-aos-delay="150">&nbsp;</div>
+                </div>
+
+            </div>
+        </section><!-- End Why Us Section -->
+        <!-- ======= Skills Section ======= -->
+        <section id="skills" class="skills">
+            <div class="container" data-aos="fade-up">
+
+                <div class="row">
+                    <div class="col-lg-6 d-flex align-items-center" data-aos="fade-right" data-aos-delay="100">
+                        <img src="assets/img/managed-firewall.png" class="img-fluid" alt="">
+                    </div>
+                    <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left" data-aos-delay="100">
+                        <h3>Trust in VPS Technology to provide the optimum level of protection for your business.</h3>
+                        <p class="fst-italic">
+                            Services offered by the firewall are
+                        </p>
+
+                        <ul>
+                            <li><i class="ri-check-double-line"></i>Static-packet filtering.</li>
+                            <li><i class="ri-check-double-line"></i>VPN</li>
+                            <li><i class="ri-check-double-line"></i>Circuit-level firewalls.</li>
+                            <li><i class="ri-check-double-line"></i>Proxy server.</li>
+                            <li><i class="ri-check-double-line"></i>Application server.</li>
+                            <li><i class="ri-check-double-line"></i>NAT.</li>
+                            <li><i class="ri-check-double-line"></i>Stateful packet inspection.</li>
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End Skills Section -->
+        <!-- ======= Services Section ======= -->
+
+        <section id="services" class="services section-bg">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Services</h2>
+                    <p class="text-justify">Managed Services are the practice of outsourcing day-to-day management responsibilities and functions that are critical to any successful business.</p>
+
+                </div>
+                <div class="row content">
+                    <div class="col-md-6">
+                        <p class="text-justify">VPS technology specialises in providing the following Managed Services:</p>
+                        <ul class="text-justify">
+                            <li>Infrastructure planning, design, setup, implementation and maintenance</li>
+                            <li>Proactive detection and prevention of potential issues (Preventative maintenance)</li>
+                            <li>Manage on-premise and cloud-based backup</li>
+                            <li>Network management and network performance administration</li>
+                            <li>Helpdesk services and remote support</li>
+                            <li>Tailor-made service level agreements</li>
+                            <li>Managed Exchange servers</li>
+                        </ul>
+
+
+                    </div>
+
+                    <div class="col-md-6">
+                        <img class="img-fluid" src="Images/consulting.png" />
+                    </div>
+                </div>
+                <br />
+                <p class="lead text-center text-primary">VPS Technology also strives to deliver the best services in the following areas:</p>
+                <br />
+                <div id="security" class="row content">
+                    <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="icon-box">
+                            <div class="icon"><i class="fa fa-shield"></i></div>
+                            <h2> Security</h2>
+                            <p>Trust in VPS technology to provide the optimum level of protection for your business.</p>
+                            <ul class="text-justify">
+                                <li>Risk Management Services</li>
+                                <li>E-mail Security Solutions (Anti-spam)</li>
+                                <li>Network Firewall Solutions and Services</li>
+                                <li>Continual Virus and Spyware Protection</li>
+                                <li>Continual Intrusion Detection and Prevention</li>
+                                <li>Disaster Recovery</li>
+                                <li>IT Policies and Governance (Poppy compliance)</li>
+                                <li>Web Content Filtering</li>
+                                <li>Virtual Private Networking (VPN)</li>
+                                <li>Domain Solutions</li>
+                                <li>Cyber Security</li>
+                                <li>Assistance with Computer and Network Policies</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="Networking" class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="icon-box">
+                            <div class="icon"><i class="fa fa-sitemap"></i></div>
+                            <h4><a href="">Networking</a></h4>
+                            <p>VPS Technology’s experienced professionals can deliver an effective IT infrastructure based on your environment and business needs.</p>
+                            <ul class="text-justify">
+                                <li>Planning and Procurement</li>
+                                <li>Network Analysis and Design</li>
+                                <li>Implementation</li>
+                                <li>Proactive Management and Maintenance</li>
+                                <li>Remote Network Access and On-site Support</li>
+                                <li>VoIP Services</li>
+                                <li>SD WAN Implementation</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div id="cloud" class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="icon-box">
+                            <div class="icon"><i class="fa fa-cloud"></i></div>
+                            <h4><a href="">Virtualisation & Cloud Services</a></h4>
+                            <p>VPS Technology will help reduce your dependency on physical devices though the different types of virtualization. We also offer mobile and flexible cloud options.</p>
+                            <ul class="text-justify">
+                                <li>Private Cloud</li>
+                                <li>Infrastructure</li>
+                                <li>Application and Storage hosting</li>
+                                <li>On Premise High Availability</li>
+                                <li>Cloud-based Solutions</li>
+                                <li>Hybrid Cloud</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!--<div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="icon-box">
+                            <div class="icon"><i class="bx bx-layer"></i></div>
+                            <h4><a href="">Nemo Enim</a></h4>
+                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+                        </div>
+                    </div>-->
+
+                </div>
+                <br />
+                <div class="section-title">
+                    <h2 class="text-center">IT Services</h2>
+                </div>
+                <br />
+                <div class="row content">
+                    <div class="col-md-6">
+                        <div class="heading-title">
+                            <h4 class="">Provide expert opinions, analysis, and recommendations to organizations or individuals</h4>
+                        </div>
+                        <p class="text-justify">We provide expert consultancy services to support your business in the short, medium or long term. We believe and maintain the word “partnership”. We first understand the challenges that your business is facing, and then carry forward to our experts to provide the accurate consultancy support you require, and work with you to suggest solutions that meet your needs.</p>
+
+
+                    </div>
+
+                    <div class="col-md-6">
+                        <img class="img-fluid" src="Images/consulting.png" />
+                    </div>
+                </div>
+
+                <br />
+
+
+
+                <div class="row content">
+                    <div class="col-md-6">
+                        <img class="img-fluid" src="Images/designing.png" />
+                    </div>
+                    <div class="col-md-6">
+                        <div class="heading-title">
+                            <h4 class="">Designing</h4>
+                        </div>
+                        <p class="text-justify">We, as a team of experienced IT architects and well-qualified engineers will help you choose and design the most favorable and productive IT solution using the most fruitful approaches and methodologies. Our IT architects are always on the IT edge meaning our designs always contain the most powerful and vendor-proven solutions. We take a fully-fledged approach to IT infrastructure.</p>
+
+
+                    </div>
+
+
+                </div>
+                <br />
+                <div class="row content">
+
+                    <div class="col-md-6">
+                        <div class="heading-title">
+                            <h4 class="">Data Security</h4>
+                        </div>
+                        <h4>1.Setup firewall</h4>
+                        <p class="text-justify">We have the expertise to frame up, supervise and retain your firewall so you can emphasize on running your business, knowing that your network circumference is sufficiently secured.</p>
+                        <h4>2.DLP server</h4>
+                        <p>Our DLP employ an amalgamation of advanced technologies to precisely notice confidential data —whether it's at rest or in motion – and includes a variety of out-of-the-box policies to help authorize compliance with less effort.</p>
+                        <h4>3.Antivirus</h4>
+                        <p>We provide inclusive antivirus and antimalware protection, as well as internet security that include safety from adware, spyware, phishing scams, malicious websites, identity theft, and other warnings to your online security.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="img-fluid" src="Images/Data security.png" />
+                    </div>
+
+                </div>
+                <br />
+                <div class="row content">
+                    <div class="col-md-6">
+                        <img class="img-fluid" src="Images/Remote-management.png" />
+                    </div>
+                    <div class="col-md-6">
+                        <div class="heading-title">
+                            <h4 class="">Remote Management</h4>
+                        </div>
+                        <p>Our Remote Management Services (RMS) allows you to clarify the adoption and management of technologies. Through maximized high performance and intensified accessibility and use of these solutions, your return on technology investments gets speedy with proactive, constant remote monitoring and management of your network. With our RMS services, you can anticipate, recognize and settle down issues faster and with greater accuracy while maintaining as much visibility and control as you desire.</p>
+                    </div>
+
+
+                </div>
+                <br />
+                <div class="row content">
+
+                    <div class="col-md-6">
+                        <div class="heading-title">
+                            <h4>Networking</h4>
+                        </div>
+                        <p>While DHCP server actively assigns an IP address every time a device connects to the network, Bind IP to MAC could avoid IP address changing with reconnection. Once a specified IP address and a device's MAC address are bound, the IP address will be self-contained for the device and the device will get that IP address every time it connects to the router. This not only makes it uncomplicated for the Administrator to manage critical devices, but also is a method to manage the LAN clients.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="img-fluid" src="Images/Networking.png" />
+                    </div>
+
+                </div>
+                <br />
+                <div class="row content">
+                    <div class="col-md-6">
+                        <img class="img-fluid" src="Images/Data-center-technology.png" />
+                    </div>
+                    <div class="col-md-6">
+                        <div class="heading-title">
+                            <h4 class="">Data Center Technology</h4>
+                        </div>
+                        <p>We centralize, standardize, and consolidate of an organization's existing servers which help our clients achieve reduction in total cost of server ownership and also help expand server reliability and accessibility, and helps reduce capital expenditures. We aid our clients revamp IT productivity, lessen the total cost of ownership associated with database technologies, and drive more value from their information assets.</p>
+                    </div>
+
+
+                </div>
+                <br />
+                <div class="row content">
+
+                    <div class="col-md-6">
+                        <div class="heading-title">
+                            <h4 class="">Disaster Recovery Solutions</h4>
+                        </div>
+                        <p>Internal human inaccuracies, bad hardware along with other “disasters” are responsible for the majority of the causes of a datacenter outage. We deliver complete Assured Recovery for virtual and physical environments with a next generation united architecture and an easy to use console. This solution qualify organizations to scale their IT environments easily while delivering against their recovery point and recovery time objectives, on premise or in cloud.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="img-fluid" src="Images/Disaster-recovery-solutions.png" />
+                    </div>
+
+                </div>
+                <br />
+                <div class="row content">
+                    <div class="col-md-6">
+                        <img class="img-fluid" src="Images/IT-Infrastructure-solutions.png" />
+                    </div>
+                    <div class="col-md-6">
+                        <div class="heading-title">
+                            <h4 class="">IT Infrastructure Solutions</h4>
+                        </div>
+                        <h4>1.Intercom</h4>
+                        <p>
+                            We offer customized intercom systems for residential buildings, commercial buildings, schools, retail stores, offices and more.
+
+                        </p>
+                        <h4>2.Cabling</h4>
+                        <p>We have substantial experience and proficiency in providing professional voice & data network cabling and wiring services to all industries including businesses & retail stores, commercial properties, educational facilities, hotel & hospitality facilities, healthcare facilities and more.</p>
+                    </div>
+
+
+                </div>
+                <br />
+                <div class="row content">
+
+                    <div class="col-md-6">
+                        <div class="heading-title">
+                            <h4 class="">Security Solutions</h4>
+                        </div>
+                        <h4>1.Setup firewall</h4>
+                        <p>
+                            We have the expertise to frame up, supervise and retain your firewall so you can emphasize on running your business, knowing that your network circumference is sufficiently secured.
+
+                        </p>
+                        <h4>2.DLP server</h4>
+                        <p>Our DLP employ an amalgamation of advanced technologies to precisely notice confidential data —whether it's at rest or in motion – and includes a variety of out-of-the-box policies to help authorize compliance with less effort.</p>
+                        <h4>3.Antivirus</h4>
+                        <p>We provide inclusive antivirus and antimalware protection, as well as internet security that include safety from adware, spyware, phishing scams, malicious websites, identity theft, and other warnings to your online security.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="img-fluid" src="Images/Security-solutions.png" />
+                    </div>
+
+                </div>
+                <div class="row content">
+                    <div class="col-md-6">
+                        <img class="img-fluid" src="Images/Network-system-integration.png" />
+                    </div>
+                    <div class="col-md-6">
+                        <div class="heading-title">
+                            <h4 class="">Network System Integration</h4>
+                        </div>
+                        <p><span class="text-dark">File sharing, System sharing, and Network Sharing:</span></p>
+
+                        <p>We offer you and your partners secure file sharing solutions with the capability to easily develop teams external to the organization for governed and secure cooperation and secure data rooms. Our proficiency extents from simple resource sharing to advanced integration of voice, data, and imaging technology as well as enterprise client/server systems. We are also skilled in designing high-level networks. </p>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </section><!-- End Services Section -->
+
+        <section id="consulting" class="about">
+            <div class="container" data-aos="fade-up">
+                <div class="section-title">
+                    <h2 class="text-center"> CONSULTING</h2>
+                </div>
+                <p class="text-justify">Technology is emerging as the primary driver of efficiency and profitability. VPS technology’s team and unique blend of IT expertise, can help your company to gain that competitive edge in the market.</p>
+
+
+
+                <div class="row content">
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="text-justify">VPS Technology strives to build long term relationships and to provide quality products and services that will exceed the expectations of all our customers.</p>
+                            <h3>VPS Consulting:</h3>
+                            <p class="text-justify">We understand what it takes to put the right technology in place to ensure a maximum return on your investments. Let VPS Technology help you with a holistic overview.</p>
+                            <h3>VPS Technology provides the following consulting services:</h3>
+                            <ul class="text-justify">
+                                <li><i class="ri-check-double-line"></i>IT needs and risk assessment</li>
+                                <li><i class="ri-check-double-line"></i>Site Visits</li>
+                                <li><i class="ri-check-double-line"></i>IT strategies</li>
+                                <li><i class="ri-check-double-line"></i>IT project management</li>
+                                <li><i class="ri-check-double-line"></i>Business continuity planning and business performance improvement</li>
+                                <li><i class="ri-check-double-line"></i>Procurement (products and services procured at best possible cost and quality)</li>
+                                <li><i class="ri-check-double-line"></i>Cost-effective and problem solving solutions</li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-6">
+                            <img class="img-responsive" src="Images/consultingpic.jpg" />
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End About Us Section -->
+        <!-- ======= Vission & Mission ======= -->
+        <section id="cta" class="cta">
+            <div class="container-fluid" data-aos="fade-up">
+
+                <div class="row content">
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <h3>Vision</h3>
+                        <p>VPS technology’s vision is to become the leader of choice for solutions, regardless of the industry. We want to empower and unleash the potential of all our customers.</p>
+                    </div>
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <h3>Mission</h3>
+                        <p>To build long term relationships with our customers, providing exceptional services that exceed expectations, through innovation, advanced technology and adding value.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End Cta Section -->
+        <!-- ======= Portfolio Section ======= -->
+        <!--<section id="portfolio" class="portfolio">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Portfolio</h2>
+                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                </div>
+
+                <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                    <li data-filter="*" class="filter-active">All</li>
+                    <li data-filter=".filter-app">App</li>
+                    <li data-filter=".filter-card">Card</li>
+                    <li data-filter=".filter-web">Web</li>
+                </ul>
+
+                <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt=""></div>
+                        <div class="portfolio-info">
+                            <h4>App 1</h4>
+                            <p>App</p>
+                            <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
+                            <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                        <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt=""></div>
+                        <div class="portfolio-info">
+                            <h4>Web 3</h4>
+                            <p>Web</p>
+                            <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+                            <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt=""></div>
+                        <div class="portfolio-info">
+                            <h4>App 2</h4>
+                            <p>App</p>
+                            <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
+                            <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                        <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt=""></div>
+                        <div class="portfolio-info">
+                            <h4>Card 2</h4>
+                            <p>Card</p>
+                            <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
+                            <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                        <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt=""></div>
+                        <div class="portfolio-info">
+                            <h4>Web 2</h4>
+                            <p>Web</p>
+                            <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
+                            <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                        <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt=""></div>
+                        <div class="portfolio-info">
+                            <h4>App 3</h4>
+                            <p>App</p>
+                            <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
+                            <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                        <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt=""></div>
+                        <div class="portfolio-info">
+                            <h4>Card 1</h4>
+                            <p>Card</p>
+                            <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
+                            <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+                        <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt=""></div>
+                        <div class="portfolio-info">
+                            <h4>Card 3</h4>
+                            <p>Card</p>
+                            <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
+                            <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+                        <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt=""></div>
+                        <div class="portfolio-info">
+                            <h4>Web 3</h4>
+                            <p>Web</p>
+                            <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
+                            <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>-->
+        <!-- End Portfolio Section -->
+        <!-- ======= Team Section ======= -->
+        <!--<section id="team" class="team section-bg">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Team</h2>
+                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-6">
+                        <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
+                            <div class="pic"><img src="assets/img/team/team-1.jpg" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>Walter White</h4>
+                                <span>Chief Executive Officer</span>
+                                <p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
+                                <div class="social">
+                                    <a href=""><i class="ri-twitter-fill"></i></a>
+                                    <a href=""><i class="ri-facebook-fill"></i></a>
+                                    <a href=""><i class="ri-instagram-fill"></i></a>
+                                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 mt-4 mt-lg-0">
+                        <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="200">
+                            <div class="pic"><img src="assets/img/team/team-2.jpg" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>Sarah Jhonson</h4>
+                                <span>Product Manager</span>
+                                <p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
+                                <div class="social">
+                                    <a href=""><i class="ri-twitter-fill"></i></a>
+                                    <a href=""><i class="ri-facebook-fill"></i></a>
+                                    <a href=""><i class="ri-instagram-fill"></i></a>
+                                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 mt-4">
+                        <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="300">
+                            <div class="pic"><img src="assets/img/team/team-3.jpg" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>William Anderson</h4>
+                                <span>CTO</span>
+                                <p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p>
+                                <div class="social">
+                                    <a href=""><i class="ri-twitter-fill"></i></a>
+                                    <a href=""><i class="ri-facebook-fill"></i></a>
+                                    <a href=""><i class="ri-instagram-fill"></i></a>
+                                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 mt-4">
+                        <div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="400">
+                            <div class="pic"><img src="assets/img/team/team-4.jpg" class="img-fluid" alt=""></div>
+                            <div class="member-info">
+                                <h4>Amanda Jepson</h4>
+                                <span>Accountant</span>
+                                <p>Dolorum tempora officiis odit laborum officiis et et accusamus</p>
+                                <div class="social">
+                                    <a href=""><i class="ri-twitter-fill"></i></a>
+                                    <a href=""><i class="ri-facebook-fill"></i></a>
+                                    <a href=""><i class="ri-instagram-fill"></i></a>
+                                    <a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>-->
+        <!-- End Team Section -->
+        <!-- ======= Pricing Section ======= -->
+        <section id="products" class="pricing">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Products</h2>
+                    <p class="text-center">At VPS Technology we will always source top of the range products for your business, at the best and most affordable price.</p>
+                    <br />
+                    <p class="lead text-center text-primary">VPS Technology supplies the following Hardware and Software:</p>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="box featured">
+                            <!--<h3>Free Plan</h3>
+                            <h4><sup>$</sup>0<span>per month</span></h4>-->
+                            <ul>
+                                <li><i class="bx bx-check"></i>Software solutions and services</li>
+                                <li><i class="bx bx-check"></i>Office productivity applications</li>
+                                <li><i class="bx bx-check"></i>Computer and network operating systems</li>
+                                <li><i class="bx bx-check"></i>Network and data security products</li>
+                                <li><i class="bx bx-check"></i>Servers, racks, power supplies, and network storage</li>
+                                <li><i class="bx bx-check"></i>Business management software</li>
+                                <li><i class="bx bx-check"></i>Advanced monitoring technologies</li>
+                            </ul>
+                            <!--<a href="#" class="buy-btn">Get Started</a>-->
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="200">
+                        <div class="box featured">
+                            <!--<h3>Business Plan</h3>
+                            <h4><sup>$</sup>29<span>per month</span></h4>-->
+                            <ul class="text-justify">
+                                <li><i class="bx bx-check"></i>Desktop computers, laptops, and accessories</li>
+                                <li><i class="bx bx-check"></i>Printers, scanners, and projectors</li>
+                                <li><i class="bx bx-check"></i>Routers, switches, and wireless access points</li>
+                                <li><i class="bx bx-check"></i>Parts and accessories</li>
+                                <li><i class="bx bx-check"></i>Hardware and software warranties and subscriptions</li>
+                                <li><i class="bx bx-check"></i>Volume licensing in line with compliance criteria</li>
+
+                            </ul>
+
+                            <!--<a href="#" class="buy-btn">Get Started</a>-->
+                        </div>
+                    </div>
+
+
+                </div>
+                <br />
+                <br />
+                <h3 class="lead text-primary text-center">VPS Technology also distincts itself from other IT companies by also providing and maintaining the following:</h3>
+                <ul class="text-justify">
+                    <li><i class="bx bx-check"></i>Software solutions and services</li>
+                    <li><i class="bx bx-check"></i>Office productivity applications</li>
+                    <li><i class="bx bx-check"></i>Computer and network operating systems</li>
+                    <li><i class="bx bx-check"></i>Network and data security products</li>
+                    <li><i class="bx bx-check"></i>Servers, racks, power supplies, and network storage</li>
+                    <li><i class="bx bx-check"></i>Business management software</li>
+                    <li><i class="bx bx-check"></i>Advanced monitoring technologies</li>
+                    <li><i class="bx bx-check"></i> Web conferencing</li>
+
+                </ul>
+            </div>
+        </section><!-- End Pricing Section -->
+        <!-- ======= Frequently Asked Questions Section ======= -->
+        <!-- End Frequently Asked Questions Section -->
+        <!-- ======= Contact Section ======= -->
+        <section id="contact" class="contact">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Contact</h2>
+                    <p>WE’RE ALWAYS OPEN TO TALK TO GOOD PEOPLE</p>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-lg-5 d-flex align-items-stretch">
+                        <div class="info">
+                            <div class="address">
+                                <i class="bi bi-geo-alt"></i>
+                                <h4>Location:</h4>
+                                <p>Juna Gaon I.T.I Road No.28 Wagle Estate Thane-400604</p>
+                            </div>
+
+                            <div class="email">
+                                <i class="bi bi-envelope"></i>
+                                <h4>Email:</h4>
+                                <p>vinod@vpstechnology.in</p>
+                            </div>
+
+                            <div class="phone">
+                                <i class="bi bi-phone"></i>
+                                <h4>CALL US / CHAT</h4>
+                                <p>+91-9821448576</p>
+                            </div>
+
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3767.987285230218!2d72.93970671394071!3d19.19575768701928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b9767a6995bd%3A0xe03aaa72b071455e!2sITI%20Circle!5e0!3m2!1sen!2sbg!4v1640607366294!5m2!1sen!2sbg" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+                        <form class="php-email-form">
+                            <div class="row">
+                                <!--<div class="form-group col-md-6">
+                                    <label for="name">Your Name</label>
+
+                                    <input id="name" name="name" type="text" placeholder="Name" class="form-control input-md" required=required />
+                                </div>-->
+                                <div class="form-group col-md-6">
+                                    <label for="name">Your Email</label>
+
+                                    <input id="txtTo" name="email" type="email" placeholder="Email" class="form-control input-md" required=required />
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="Subject">Subject</label>
+                                    <input id="txtSubject" name="subject" type="text" placeholder="Subject" class="form-control input-md" required=required />
+                                </div>
+                            </div>
+                            <!--<div class="row">
+                                <div class="form-group col-md-6">
+                                    <label for="name">First Name</label>
+                                    <input type="text" class="form-control" name="subject" id="txtName" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="phone">Phone No.<span class=" ="> </span></label>
+                                    <input id="txtphone" name="phone" type="text" placeholder="Phone" class="form-control input-md" required=required />
+                                </div>
+
+                            </div>-->
+                            <div class="form-group">
+                                <label for="name">Message</label>
+                                <!--<textarea id="txtBody" class="form-control" name="message" rows="10" required></textarea>-->
+                                <textarea class="form-control" id="txtBody" rows="7" name="message" placeholder="Message" required=required></textarea>
+                            </div>
+                            <div class="my-3">
+                                <div class="loading">Loading</div>
+                                <div class="error-message"></div>
+                                <div class="sent-message">Your message has been sent. Thank you!</div>
+                            </div>
+                            <div class="text-center"><button type="submit" id="btnSend" onclick="myFunction()">Send Message</button></div>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Contact Section -->
+
+
+    </main><!-- End #main -->
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+
+        <!--<div class="footer-newsletter">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-6">
+                <h4>Join Our Newsletter</h4>
+                <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+                <form action="" method="post">
+                  <input type="email" name="email"><input type="submit" value="Subscribe">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>-->
+
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <a class="navbar-brand" href="#">
+                            <img src="Images/VPS-Logo.jpg" alt="" width="75" height="75">
+
+                        </a>
+                        <p>
+                            102- Juna Gaon I.T.I Road No. 28<br>
+                            Wagle Industrial Estate <br /> Thane-Maharashtra -400604<br><br>
+                            <strong>Phone:</strong> +91-9821448576<br>
+                            <strong>Email:</strong> vinod@vpstechnology.in<br>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Useful Links</h4>
+                        <ul>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#VPS">Home</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#about">About us</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#Services">Services</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#consulting">Cunsulting</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#products">Products</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Our Services</h4>
+                        <ul class="nav-link">
+                            <li><i class="bx bx-chevron-right"></i> <a href="#why-us">Server Services</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#skills">firewal Management </a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#cta">Vision & Mission</a></li>
+
+
+                        </ul>
+                    </div>
+
+                    <!--<div class="col-lg-3 col-md-6 footer-links">
+                      <h4>Our Social Networks</h4>
+                      <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
+                      <div class="social-links mt-3">
+                        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                      </div>
+                    </div>-->
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container footer-bottom clearfix">
+            <div class="copyright">
+                &copy; Copyright <strong><span>VPS</span></strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+
+            </div>
+        </div>
+    </footer><!-- End Footer -->
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <!--<script src="assets/vendor/php-email-form/validate.js"></script>-->
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

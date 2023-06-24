@@ -1,0 +1,641 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="Ihll Images/favihome.png" />
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+
+    <script type="text/javascript">
+        $(function () {
+            $("#Header").load("Header.htm");
+            $("#footer").load("footer.htm");
+        });
+    </script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        function myFunction() {
+
+
+
+
+            ///alert("sds");
+            var names = $("#name").val();
+            var email = $("#email").val();
+            var phone = $("#phone").val();
+            var message = $("#message").val();
+            if (names == "" || email == "" || phone == "" || message == "") {
+                alert("please Enter all details.");
+                return false;
+            }
+
+            $('#loading').show();
+
+
+            $.ajax({
+                type: "POST",
+
+                //url: 'http://admin.indiahomeloan.in/services.asmx/send_mail',
+                url: '/services.asmx/send_mail',
+
+                data: '{name: "' + names + '", email: "' + email + '" , phone: "' + phone + '" ,message: "' + message + '"}',
+                contentType: "application/json; charset=utf-8",
+                dataType: 'json',
+                success: function (data) {
+                    var objdata = JSON.stringify(data.d);
+                    //alert(objdata);
+                    alert("Thanks for your email /We will shortly update you.");
+                    window.location.reload();
+                }
+            });
+
+            //  $('#loading').hide();
+
+            //$("#loading").css("display", "none");
+
+        }
+
+
+    </script>
+    <style>
+        #loading {
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            position: fixed;
+            display: block;
+            opacity: 0.7;
+            background-color: #fff;
+            z-index: 99;
+            text-align: center;
+        }
+
+        #loading-image {
+            position: absolute;
+            top: 35%;
+            left: 50%;
+            z-index: 100;
+        }
+    </style>
+    <meta name="keywords" content="Financial Website Template, Bootstrap Template, Loan Product, Personal Loan, " />
+    <title>Contact Us</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style new.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/fontello.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/animsition.min.css" />
+    <link href="css/Custom-slider.css" rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Merriweather:300,300i,400,400i,700,700i"
+          rel="stylesheet" />
+
+    <link href="css/owl.carousel.css" rel="stylesheet" />
+    <link href="css/owl.theme.css" rel="stylesheet" />
+
+</head>
+<body style="background-color: White">
+
+    <div id="Header"></div>
+
+    <div id="loading" style="display:none">
+        <img id="loading-image" src="images/ajax-loader.gif" alt="Loading..." />
+    </div>
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <div>
+                <center>
+                    <img src="slider images/BranchLocator.jpg" alt="" style="width: 95%" />
+                </center>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div>
+            &nbsp;
+        </div>
+    </div>
+
+
+
+    <section class="about-section investor-section">
+        <div class="tab about-tab-wrapper" role="tabpanel"></div>
+
+
+
+        <section class="breadcrumb-wrap">
+            <div class="container">
+                <ul>
+                    <li><a href="index.html" title="Home">Home</a></li>
+                    <li>Contact Us</li>
+                </ul>
+            </div>
+        </section>
+        <!-- Breadcrumbs Section End -->
+        <!-- Banner Section start -->
+        <!-- Banner Section End -->
+        <!-- Inner Template Header Section Start -->
+        <!--<section class="inner-header-wrap">
+            <div class="container">
+                <div class="inner-headings text-center">
+                    <h1>Contact Us</h1>
+                    <div class="">
+
+                    </div>
+                </div>
+            </div>
+        </section>-->
+        <div class="clearit"></div>
+
+        <section class="branch-locator commonspace">
+            <div class="">
+                <!-- content start -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="wrapper-content bg-white">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-12 col-xs-12">
+                                        <div class="col-md-12">
+                                            <div class="bg-white">
+                                                <h2 style="font-size:23px;font-family:Poppins, sans-serif">Head Office </h2>
+                                                <hr />
+                                                <div class="row">
+                                                    <div class="col-md-6 col-xs-12 m30">
+                                                        <p class="address-text">
+                                                            <span><i class="icon-placeholder-3 icon-1x"></i></span> 504-504A, Nirmal Ecstasy, 5th Floor, Jatashankar Dossa Road, Mulund (west), Mumbai - 400 080.
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-md-6 col-xs-12 m30">
+                                                        <p class="call-text">
+                                                            <span><i class="icon-phone-call icon-1x"></i></span>1800 22 5922
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-md-6 col-xs-12 m30">
+                                                        <p class="call-text">
+                                                            <span><i class="icon-phone-call icon-1x"></i></span>022 256 833 53/ 54 <br /> 079 40035027
+
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-md-6 col-xs-12 m30">
+                                                        <p class="call-text">
+                                                            <span><i class="fa fa-envelope" style="font-size:24px"></i></span>customercare@indiahomeloan.co.in
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="section-space40"></div>
+                                                <h2 style="font-size:23px;font-family:Poppins, sans-serif">
+                                                    Investor Grievance Redressal
+                                                </h2>
+                                                <hr />
+
+                                                <div class="row">
+                                                    <div class="col-md-6 col-xs-12 m30">
+
+                                                        <p>
+                                                            <b> REGISTRAR AND TRANSFER AGENT</b>
+
+                                                        </p>
+                                                        <p class="address-text">
+
+
+                                                            <br /> <span><i class="icon-placeholder-3 icon-1x"></i></span> Purva Shareregistry (I) Private Limited;
+                                                            9, Shiv shakti Industrial Estate,
+                                                            Sitaram Mill Compound,
+                                                            J.R Borish Marg, Lower Parel,
+                                                            Mumbai : 400011
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-md-6 col-xs-12 m30">
+
+                                                        <p>
+                                                            <b> &nbsp; <br /> &nbsp;</b>
+                                                        </p>
+
+
+                                                        <p class="call-text">
+
+                                                            <span><i class="icon-phone-call icon-1x"></i></span> 91-22-2301 6761
+
+
+                                                        </p>
+                                                    </div>
+
+                                                    <div class="col-md-6 col-xs-12 m30">
+                                                        <p class="call-text">
+                                                            <span><i class="icon-phone-call icon-1x"></i></span> 91-22-2301 8261
+
+
+                                                        </p>
+                                                    </div>
+
+
+
+                                                </div>
+                                                <br />
+                                                <br />
+
+                                                <!--<div class="map"  id="googleMap">
+                                                </div>-->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 col-sm-12 col-xs-12">
+
+                                        <div class="col-md-12">
+                                            <div class="bg-white">
+                                                <h2 style="font-size:23px;font-family:Poppins, sans-serif">  Reach out to us &amp; we will respond ASAP.</h2>
+                                                <hr />
+
+
+                                                <div class="row">
+                                                    <div class=" =">
+                                                        <!-- Text input-->
+                                                        <div class=".col-md-1233 col-sm-12 col-xs-12">
+                                                            <div class="form-group">
+                                                                <label class="sr-only control-label" for="name">
+                                                                    name<span class=" ="> </span>
+                                                                </label>
+                                                                <input id="name" name="name" type="text" placeholder="Name" class="form-control input-md"
+                                                                       required=required />
+                                                            </div>
+                                                        </div>
+                                                        <!-- Text input-->
+                                                        <div class=".col-md-1233 col-sm-12 col-xs-12">
+                                                            <div class="form-group">
+                                                                <label class="sr-only control-label" for="email">
+                                                                    Email<span class=" ="> </span>
+                                                                </label>
+                                                                <input id="email" name="email" type="email" placeholder="Email" class="form-control input-md"
+                                                                       required=required />
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- Text input-->
+                                                        <div class=".col-md-1233 col-sm-12 col-xs-12">
+                                                            <div class="form-group">
+                                                                <label class="sr-only control-label" for="phone">
+                                                                    Phone<span class=" ="> </span>
+                                                                </label>
+                                                                <input id="phone" name="phone" type="text" placeholder="Phone" class="form-control input-md"
+                                                                       required=required />
+                                                            </div>
+                                                        </div>
+                                                        <!-- Select Basic -->
+                                                        <div class="col-md-12 col-xs-12">
+                                                            <div class="form-group">
+                                                                <label class="control-label" for="message">
+                                                                </label>
+                                                                <textarea class="form-control" id="message" rows="7" name="message" placeholder="Message"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <!--<div class="col-md-6 col-sm-12 col-xs-12">
+                                                            <div class="form-group">
+                                                                <input name="txtInput" type="text" placeholder="Enter Captcha" id="txtInput" class="form-control input-md" />
+                                                            </div>
+                                                        </div>-->
+                                                        <!--<div class="col-md-6">
+                                                            <div class="input-group">
+
+                                                                <input type="text" placeholder="Enter Captcha" class="form-control" id="mainCaptcha" />
+                                                                <span class="input-group-btn">
+                                                                    <button class="btn btn-default" type="submit" id="refresh" onclick="Captcha();"><span class="glyphicon glyphicon-refresh"></span></button>
+                                                                </span>
+
+                                                            </div>
+                                                        </div>-->
+                                                        <!-- Button -->
+                                                        <div class="col-md-12 col-xs-12">
+                                                            <button type="submit" id="btn_sub" onclick="myFunction()" class="btn btn-default">
+                                                                Submit
+                                                            </button>
+                                                            <br />
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
+
+                                            </div>
+                                        </div>
+
+                                        <div class="sidebar-area">
+                                            <div class="row">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="section-space40"></div>
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-12 col-xs-12">
+                                        <div class="col-md-12">
+                                            <div class="bg-white">
+                                                <h2 style="font-size:23px;font-family:Poppins, sans-serif"> <!--Branch Details--> </h2>
+
+
+                                                <!--<div class="map" id="googleMap">
+                                                </div>-->
+
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+
+
+                                    <div class="section-space40"></div>
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-12 col-xs-12">
+                                            <div class="col-md-12">
+                                                <div class="bg-white">
+                                                    <h2 style="font-size:23px;font-family:Poppins, sans-serif"> Branch Offices </h2>
+                                                    <hr />
+                                                    <h3>Ahmedabad</h3>
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-xs-12 m30">
+                                                            <p class="address-text">
+                                                                <span><i class="icon-placeholder-3 icon-1x"></i></span> A/202, Ganesh Plaza, Near Bus Stand Navrangpura, Ahmedabad-380009
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-md-6 col-xs-12 m30">
+                                                            <p class="call-text">
+                                                                <span><i class="icon-phone-call icon-1x"></i></span>079-26449917/18
+                                                            </p>
+                                                        </div>
+
+                                                    </div>
+                                                    <hr />
+                                                    <h3>Jamnagar </h3>
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-xs-12">
+                                                            <p class="address-text">
+                                                                <span><i class="icon-placeholder-3 icon-1x"></i></span>428, Indraprastha Complex,
+                                                                Pancheswar Tower Road, Jamnagar-361001
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-md-6 col-xs-12 m30">
+                                                            <p class="call-text">
+                                                                <span><i class="icon-phone-call icon-1x"></i></span>7228059093
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+                                                    <hr />
+                                                    <h3>Jalgaon </h3>
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-xs-12 m30">
+                                                            <p class="address-text">
+                                                                <span><i class="icon-placeholder-3 icon-1x"></i></span>Bharambe Building, Opp. Barade Modicos Gandhi Nagar, Zilla Peth, Jalgaon-425001
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-md-6 col-xs-12">
+                                                            <p class="call-text">
+                                                                <span><i class="icon-phone-call icon-1x"></i></span>9021902124
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <hr />
+                                                    <h3>Jodhpur </h3>
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-xs-12 m30">
+                                                            <p class="address-text">
+                                                                <span><i class="icon-placeholder-3 icon-1x"></i></span>303-A, 3rd Floor, Sanskriti Tower,
+                                                                Above Yes Bank, Plot No. 5, Masuria Scheme, Nr. New Kohinoor Cinema, Chopasni Road, Jodhpur-342003
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-md-6 col-xs-12">
+                                                            <p class="call-text">
+                                                                <span><i class="icon-phone-call icon-1x"></i></span>9860977044
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+
+
+
+                                                    <hr />
+                                                    <h3>Kutch </h3>
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-xs-12 m30">
+                                                            <p class="address-text">
+                                                                <span><i class="icon-placeholder-3 icon-1x"></i></span>
+                                                                215, Om Corner, Banking Circle, Gandhidham, Kutch-370201
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-md-6 col-xs-12">
+                                                            <p class="call-text">
+                                                                <span><i class="icon-phone-call icon-1x"></i></span>9825046655
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <hr />
+                                                    <h3>New-Delhi </h3>
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-xs-12 m30">
+                                                            <p class="address-text">
+                                                                <span><i class="icon-placeholder-3 icon-1x"></i></span>
+                                                                B-56, Okhla Industrial Estate
+                                                                Industrial Area Phase-I, New-Delhi-110020
+
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-md-6 col-xs-12">
+                                                            <p class="call-text">
+                                                                <span><i class="icon-phone-call icon-1x"></i></span>9811922349
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+                                                    <hr />
+
+
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-6 col-sm-12 col-xs-12">
+                                            <div class="col-md-12">
+                                                <div class="bg-white">
+                                                    <h2 style="font-size:23px;font-family:Poppins, sans-serif">&nbsp;<!--Investor Grievance Redressal-->  </h2>
+                                                    <hr />
+                                                    <h3>Patan </h3>
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-xs-12 m30">
+                                                            <p class="address-text">
+                                                                <span><i class="icon-placeholder-3 icon-1x"></i></span>
+                                                                17, Shree Dev Complex, Opp. Khadiya Mill Station Road, Patan-384265,
+
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-md-6 col-xs-12">
+                                                            <p class="call-text">
+                                                                <span><i class="icon-phone-call icon-1x"></i></span>9725225249
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                    <hr />
+                                                    <h3>Rajkot </h3>
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-xs-12 m30">
+                                                            <p class="address-text">
+                                                                <span><i class="icon-placeholder-3 icon-1x"></i></span>
+                                                                127, 4th Floor, Samriddhi Bhavan
+                                                                Opp. Bombay Petrol Pump, Gondal Road, Rajkot-360002,
+
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-md-6 col-xs-12">
+                                                            <p class="call-text">
+                                                                <span><i class="icon-phone-call icon-1x"></i></span>9925108674
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                    <hr />
+                                                    <h3>Surat </h3>
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-xs-12 m30">
+                                                            <p class="address-text">
+                                                                <span><i class="icon-placeholder-3 icon-1x"></i></span>
+                                                                401, 6th Floor, New Opera House,
+                                                                Near Desai CNG Station, Bamroli Road, Khatodra, Surat-395001
+
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-md-6 col-xs-12">
+                                                            <p class="call-text">
+                                                                <span><i class="icon-phone-call icon-1x"></i></span>8153036666
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+
+
+
+                                                    <hr />
+                                                    <h3>Vadodara </h3>
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-xs-12 m30">
+                                                            <p class="address-text">
+                                                                <span><i class="icon-placeholder-3 icon-1x"></i></span>
+                                                                122, 1st Floor, Siddharth Complex, Alkapuri Vadodara-390007
+
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-md-6 col-xs-12">
+                                                            <p class="call-text">
+                                                                <span><i class="icon-phone-call icon-1x"></i></span>9824037643
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <hr />
+                                                    <h3>Veraval </h3>
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-xs-12 m30">
+                                                            <p class="address-text">
+                                                                <span><i class="icon-placeholder-3 icon-1x"></i></span>
+                                                                22, 1st Floor, Vinayak Plaza,
+                                                                Opp. Nagar Palika, Rajendra Bhavan Road, Veraval-362265
+
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-md-6 col-xs-12">
+                                                            <p class="call-text">
+                                                                <span><i class="icon-phone-call icon-1x"></i></span>8347511269
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <hr />
+                                                    <h3>BhavNagar</h3>
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-xs-12 m30">
+                                                            <p class="address-text">
+                                                                <span><i class="icon-placeholder-3 icon-1x"></i></span>
+                                                                Shop No.8 Gujrat Housing Shopping Center,
+                                                                Near 12 No. City Bus Stop, Bharat Nagar,
+                                                                BhavNagar-364002.
+
+                                                            </p>
+                                                        </div>
+                                                        <div class="col-md-6 col-xs-12">
+                                                            <p class="call-text">
+                                                                <span><i class="icon-phone-call icon-1x"></i></span>9601391963
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="sidebar-area">
+                                                <div class="row">
+
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+        <!-- /.tiny footer -->
+        <!-- /.tiny footer -->
+        <!-- back to top icon -->
+        <a href="#0" class="cd-top" title="Go to top">Top</a>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/menumaker.js"></script>
+        <script type="text/javascript" src="js/animsition.js"></script>
+        <script type="text/javascript" src="js/animsition-script.js"></script>
+        <script type="text/javascript" src="js/jquery.sticky.js"></script>
+        <script type="text/javascript" src="js/sticky-header.js"></script>
+        <script src="js/back-to-top.js" type="text/javascript"></script>
+
+
+
+    </section>
+    <div id="footer"></div>
+</body>
+</html>
